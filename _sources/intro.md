@@ -66,6 +66,58 @@ print(f"Data Request returned {response.status_code} : '{response.reason}'")
 # Print data returned (parsing as JSON)
 payload = response.json()  # Parse `response.text` into JSON
    </pre>
+    <pre data-executable>
+    data=pd.json_normalize(payload['data'])
+selected=data[["datetext", "counttext","location.formattedAddress"]]
+print('Dataset feactched as selected dataframe')
+#print(selected)
+#list(selected.columns.values)
+     </pre>
+      <pre data-executable>
+      filtedVals= selected[selected['location.formattedAddress'].str.contains('Nuwara Eliya, Sri Lanka')]
+print('By defult Nuwara Eliya District selected')
+print('For other district select it form the dropdown below >>>')
+
+
+
+def f(x):
+    print("District changed to %s" % x)
+    filtedVals=selected[selected['location.formattedAddress'].str.contains(x)]
+    print(filtedVals)
+    pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
+    return pivoted
+
+#interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
+
+
+
+#def foo(param):
+    #display(param)
+    #return param
+    #return pd.DataFrame({'Z':[param,param], 'A': ['b', 'b']})
+
+params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
+
+#bar = widgets.interactive_output(foo, {'param' : params})
+
+
+c = widgets.IntSlider()
+
+ui = widgets.HBox([params])
+def f2(params):
+    #print((params))
+    return params;
+
+out = widgets.interactive_output(f2, {'params': params})
+
+display(ui, out)
+
+
+#display(widgets.VBox([params, bar]))
+
+#display(ui, out)
+
+      </pre>
  <script src="_static/juniper.min.js"></script>
  
  <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:false })</script>
