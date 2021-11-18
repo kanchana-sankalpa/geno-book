@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>District Wise Infected Count &#8212; Geno book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/juniper.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Geno Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/data-akamutu.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geno book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Geno Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   District Wise Infected Count
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/covid19_districts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/GenoTechies/GenosTechBooks/geno-book/issues/new?title=Issue%20on%20page%20%2Fcovid19_districts.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/GenoTechies/GenosTechBooks/main?urlpath=tree/docs/covid19_districts.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="district-wise-infected-count">
+<h1>District Wise Infected Count<a class="headerlink" href="#district-wise-infected-count" title="Permalink to this headline">¶</a></h1>
+<p>Click the <span class="fa fa-rocket"></span> –&gt; <span class="guilabel">Live Code</span> button above on this page, and run the code below.
+In the frist attempt it might take some time to Binder to be “ready”. If it’s not repsonded click the button again.</p>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pandas
+<span class="o">!</span>pip install matplotlib
+<span class="o">!</span>pip install seaborn
+<span class="o">!</span>pip install ipywidgets
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in d:\github\genostechbooks\venv\lib\site-packages (1.3.4)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in d:\github\genostechbooks\venv\lib\site-packages (from pandas) (2.8.2)
+Requirement already satisfied: pytz&gt;=2017.3 in d:\github\genostechbooks\venv\lib\site-packages (from pandas) (2021.3)
+Requirement already satisfied: numpy&gt;=1.17.3 in d:\github\genostechbooks\venv\lib\site-packages (from pandas) (1.21.3)
+Requirement already satisfied: six&gt;=1.5 in d:\github\genostechbooks\venv\lib\site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.16.0)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.3; however, version 21.3.1 is available.
+You should consider upgrading via the &#39;D:\Github\GenosTechBooks\venv\Scripts\python.exe -m pip install --upgrade pip&#39; command.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in d:\github\genostechbooks\venv\lib\site-packages (3.4.3)
+Requirement already satisfied: numpy&gt;=1.16 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (1.21.3)
+Requirement already satisfied: pillow&gt;=6.2.0 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (8.4.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (3.0.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (1.3.2)
+Requirement already satisfied: cycler&gt;=0.10 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: six in d:\github\genostechbooks\venv\lib\site-packages (from cycler&gt;=0.10-&gt;matplotlib) (1.16.0)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.3; however, version 21.3.1 is available.
+You should consider upgrading via the &#39;D:\Github\GenosTechBooks\venv\Scripts\python.exe -m pip install --upgrade pip&#39; command.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in d:\github\genostechbooks\venv\lib\site-packages (0.11.2)
+Requirement already satisfied: matplotlib&gt;=2.2 in d:\github\genostechbooks\venv\lib\site-packages (from seaborn) (3.4.3)
+Requirement already satisfied: pandas&gt;=0.23 in d:\github\genostechbooks\venv\lib\site-packages (from seaborn) (1.3.4)
+Requirement already satisfied: numpy&gt;=1.15 in d:\github\genostechbooks\venv\lib\site-packages (from seaborn) (1.21.3)
+Requirement already satisfied: scipy&gt;=1.0 in d:\github\genostechbooks\venv\lib\site-packages (from seaborn) (1.7.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (1.3.2)
+Requirement already satisfied: cycler&gt;=0.10 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (0.10.0)
+Requirement already satisfied: pillow&gt;=6.2.0 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (8.4.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (3.0.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in d:\github\genostechbooks\venv\lib\site-packages (from matplotlib&gt;=2.2-&gt;seaborn) (2.8.2)
+Requirement already satisfied: six in d:\github\genostechbooks\venv\lib\site-packages (from cycler&gt;=0.10-&gt;matplotlib&gt;=2.2-&gt;seaborn) (1.16.0)
+Requirement already satisfied: pytz&gt;=2017.3 in d:\github\genostechbooks\venv\lib\site-packages (from pandas&gt;=0.23-&gt;seaborn) (2021.3)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.3; however, version 21.3.1 is available.
+You should consider upgrading via the &#39;D:\Github\GenosTechBooks\venv\Scripts\python.exe -m pip install --upgrade pip&#39; command.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets in d:\github\genostechbooks\venv\lib\site-packages (7.6.5)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (6.4.2)
+Requirement already satisfied: nbformat&gt;=4.2.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (5.1.3)
+Requirement already satisfied: traitlets&gt;=4.3.1 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (5.1.0)
+Requirement already satisfied: ipython-genutils~=0.2.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (0.2.0)
+Requirement already satisfied: ipython&gt;=4.0.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (7.28.0)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (3.5.1)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipywidgets) (1.0.2)
+Requirement already satisfied: debugpy&lt;2.0,&gt;=1.0.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (1.5.1)
+Requirement already satisfied: matplotlib-inline&lt;0.2.0,&gt;=0.1.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (0.1.3)
+Requirement already satisfied: tornado&lt;7.0,&gt;=4.2 in d:\github\genostechbooks\venv\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (6.1)
+Requirement already satisfied: jupyter-client&lt;8.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets) (6.1.12)
+Requirement already satisfied: decorator in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (5.1.0)
+Requirement already satisfied: setuptools&gt;=18.5 in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (57.4.0)
+Requirement already satisfied: colorama in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (0.4.4)
+Requirement already satisfied: backcall in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (0.2.0)
+Requirement already satisfied: jedi&gt;=0.16 in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (0.18.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (3.0.21)
+Requirement already satisfied: pygments in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (2.10.0)
+Requirement already satisfied: pickleshare in d:\github\genostechbooks\venv\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets) (0.7.5)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in d:\github\genostechbooks\venv\lib\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=4.0.0-&gt;ipywidgets) (0.8.2)
+Requirement already satisfied: pyzmq&gt;=13 in d:\github\genostechbooks\venv\lib\site-packages (from jupyter-client&lt;8.0-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (22.3.0)
+Requirement already satisfied: jupyter-core&gt;=4.6.0 in d:\github\genostechbooks\venv\lib\site-packages (from jupyter-client&lt;8.0-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (4.8.1)
+Requirement already satisfied: python-dateutil&gt;=2.1 in d:\github\genostechbooks\venv\lib\site-packages (from jupyter-client&lt;8.0-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (2.8.2)
+Requirement already satisfied: pywin32&gt;=1.0 in d:\github\genostechbooks\venv\lib\site-packages (from jupyter-core&gt;=4.6.0-&gt;jupyter-client&lt;8.0-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets) (302)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in d:\github\genostechbooks\venv\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets) (3.2.0)
+Requirement already satisfied: six&gt;=1.11.0 in d:\github\genostechbooks\venv\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets) (1.16.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in d:\github\genostechbooks\venv\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets) (0.18.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in d:\github\genostechbooks\venv\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets) (21.2.0)
+Requirement already satisfied: wcwidth in d:\github\genostechbooks\venv\lib\site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0-&gt;ipywidgets) (0.2.5)
+Requirement already satisfied: notebook&gt;=4.4.1 in d:\github\genostechbooks\venv\lib\site-packages (from widgetsnbextension~=3.5.0-&gt;ipywidgets) (6.4.5)
+Requirement already satisfied: prometheus-client in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.11.0)
+Requirement already satisfied: argon2-cffi in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (21.1.0)
+Requirement already satisfied: nbconvert in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (6.2.0)
+Requirement already satisfied: terminado&gt;=0.8.3 in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.12.1)
+Requirement already satisfied: Send2Trash&gt;=1.5.0 in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.8.0)
+Requirement already satisfied: jinja2 in d:\github\genostechbooks\venv\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (3.0.2)
+Requirement already satisfied: pywinpty&gt;=1.1.0 in d:\github\genostechbooks\venv\lib\site-packages (from terminado&gt;=0.8.3-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.1.4)
+Requirement already satisfied: cffi&gt;=1.0.0 in d:\github\genostechbooks\venv\lib\site-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.15.0)
+Requirement already satisfied: pycparser in d:\github\genostechbooks\venv\lib\site-packages (from cffi&gt;=1.0.0-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (2.20)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in d:\github\genostechbooks\venv\lib\site-packages (from jinja2-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (2.0.1)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.8.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.5.0)
+Requirement already satisfied: bleach in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (4.1.0)
+Requirement already satisfied: testpath in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.5.0)
+Requirement already satisfied: defusedxml in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.7.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.3)
+Requirement already satisfied: nbclient&lt;0.6.0,&gt;=0.5.0 in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.5.4)
+Requirement already satisfied: jupyterlab-pygments in d:\github\genostechbooks\venv\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.1.2)
+Requirement already satisfied: nest-asyncio in d:\github\genostechbooks\venv\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (1.5.1)
+Requirement already satisfied: packaging in d:\github\genostechbooks\venv\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (21.0)
+Requirement already satisfied: webencodings in d:\github\genostechbooks\venv\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (0.5.1)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in d:\github\genostechbooks\venv\lib\site-packages (from packaging-&gt;bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets) (3.0.0)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: You are using pip version 21.2.3; however, version 21.3.1 is available.
+You should consider upgrading via the &#39;D:\Github\GenosTechBooks\venv\Scripts\python.exe -m pip install --upgrade pip&#39; command.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># Import the requests library</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide_input tag_hide_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.toggle-button { display :none !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.toggle-button-hidden { display :none !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.button.toggle-button  { display :none !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.fas fa-download { display :none !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+
+
+<span class="c1"># Query URL</span>
+<span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&amp;enddate=2021-09-31&#39;</span><span class="p">)</span>
+<span class="c1">#print(url)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># Make a GET request to the URL</span>
+<span class="c1"># Print status code (and associated text)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data Request returned </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> : &#39;</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="c1"># Print data returned (parsing as JSON)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  <span class="c1"># Parse `response.text` into JSON</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>.toggle-button { display :none !important; }</style></div><div class="output text_html"><style>.toggle-button-hidden { display :none !important; }</style></div><div class="output text_html"><style>.button.toggle-button  { display :none !important; }</style></div><div class="output text_html"><style>.fas fa-download { display :none !important; }</style></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Request returned 200 : &#39;OK&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+<span class="n">selected</span><span class="o">=</span><span class="n">data</span><span class="p">[[</span><span class="s2">&quot;datetext&quot;</span><span class="p">,</span> <span class="s2">&quot;counttext&quot;</span><span class="p">,</span><span class="s2">&quot;location.formattedAddress&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dataset feactched as selected dataframe&#39;</span><span class="p">)</span>
+<span class="c1">#print(selected)</span>
+<span class="c1">#list(selected.columns.values)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset feactched as selected dataframe
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtedVals</span><span class="o">=</span> <span class="n">selected</span><span class="p">[</span><span class="n">selected</span><span class="p">[</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Nuwara Eliya, Sri Lanka&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;By defult Nuwara Eliya District selected&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;For other district select it form the dropdown below &gt;&gt;&gt;&#39;</span><span class="p">)</span>
+
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;District changed to </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">filtedVals</span><span class="o">=</span><span class="n">selected</span><span class="p">[</span><span class="n">selected</span><span class="p">[</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">filtedVals</span><span class="p">)</span>
+    <span class="n">pivoted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">filtedVals</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;counttext&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;datetext&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">pivoted</span>
+
+<span class="c1">#interact(f, x=[&#39;Nuwara Eliya, Sri Lanka&#39;, &#39;Badulla, Sri Lanka&#39;, &#39;Kurunegala, Sri Lanka&#39;]);</span>
+
+
+
+<span class="c1">#def foo(param):</span>
+    <span class="c1">#display(param)</span>
+    <span class="c1">#return param</span>
+    <span class="c1">#return pd.DataFrame({&#39;Z&#39;:[param,param], &#39;A&#39;: [&#39;b&#39;, &#39;b&#39;]})</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nuwara Eliya, Sri Lanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Badulla, Sri Lanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Kurunegala, Sri Lanka&#39;</span><span class="p">])</span>
+
+<span class="c1">#bar = widgets.interactive_output(foo, {&#39;param&#39; : params})</span>
+
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">()</span>
+
+<span class="n">ui</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">params</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="c1">#print((params))</span>
+    <span class="k">return</span> <span class="n">params</span><span class="p">;</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">interactive_output</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">params</span><span class="p">})</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">ui</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+
+
+<span class="c1">#display(widgets.VBox([params, bar]))</span>
+
+<span class="c1">#display(ui, out)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>By defult Nuwara Eliya District selected
+For other district select it form the dropdown below &gt;&gt;&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "19b0a6afabf24e4d99efcd7e89011836"}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "a32b1b405d4f45539d819e6555f6ae4f"}
+</script></div>
+</div>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtedVals</span><span class="o">=</span> <span class="n">selected</span><span class="p">[</span><span class="n">selected</span><span class="p">[</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Nuwara Eliya, Sri Lanka&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;By defult Nuwara Eliya District selected&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;For other district select it form the dropdown below &gt;&gt;&gt;&#39;</span><span class="p">)</span>
+<span class="c1">#print(filtedVals)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nuwara Eliya, Sri Lanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Badulla, Sri Lanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Kurunegala, Sri Lanka&#39;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Nuwara Eliya, Sri Lanka&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;District:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;change&#39;</span> <span class="ow">and</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;District changed to </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">])</span>
+        <span class="n">filtedVals</span><span class="o">=</span><span class="n">selected</span><span class="p">[</span><span class="n">selected</span><span class="p">[</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">])]</span>
+        <span class="c1">#print(filtedVals)</span>
+        <span class="n">pivoted</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">filtedVals</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;counttext&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;datetext&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;location.formattedAddress&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">))</span>
+        <span class="c1">#print(list(pivoted.columns.values))</span>
+        <span class="c1">#pivoted = pivoted.set_index(&#39;datetext&#39;)</span>
+        <span class="c1">#print(pivoted)</span>
+        
+        <span class="c1"># figure size globally set for matplotlib</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.grid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">pivoted</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+        <span class="c1">#ax.set_color_palette(sns.color_palette(&quot;muted&quot;))</span>
+        <span class="n">pivoted</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span> 
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+
+<span class="n">w</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_change</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>By defult Nuwara Eliya District selected
+For other district select it form the dropdown below &gt;&gt;&gt;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "1bcf652ff59c4573abef7ce228966cd9"}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">ep</span>
+<span class="n">x_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">slope_viz</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">x_values</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">12.2</span><span class="p">);</span>
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">slope_viz</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "464add206a084e79b4597e11a2355f17"}
+</script></div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"9431c6e544e94994941fcca90d9d2edb": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "098dc352a8b34292b9515317bea40b97": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "599d10ddaca74474a635a71546828ea7": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Nuwara Eliya, Sri Lanka", "Badulla, Sri Lanka", "Kurunegala, Sri Lanka"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_9431c6e544e94994941fcca90d9d2edb", "style": "IPY_MODEL_098dc352a8b34292b9515317bea40b97"}}, "a2947a9dbd2b4f1aae89bb363b659bbe": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "410f1e7bd52446a89d360d9f251e3e94": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "98d5c24590e04ce0bfb3b592bebe9ce6": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_a2947a9dbd2b4f1aae89bb363b659bbe", "max": 100, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_410f1e7bd52446a89d360d9f251e3e94", "value": 0}}, "d893852d904642298dd27c26d0a489f2": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "19b0a6afabf24e4d99efcd7e89011836": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_599d10ddaca74474a635a71546828ea7"], "layout": "IPY_MODEL_d893852d904642298dd27c26d0a489f2"}}, "a13426c04c41414d92ff6b385d30b69b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a32b1b405d4f45539d819e6555f6ae4f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a13426c04c41414d92ff6b385d30b69b", "msg_id": "", "outputs": []}}, "c3f39c4a51b74d3e9f8d8bb735564c52": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3776365eea264ae8a07c37c299b22032": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "1bcf652ff59c4573abef7ce228966cd9": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["Nuwara Eliya, Sri Lanka", "Badulla, Sri Lanka", "Kurunegala, Sri Lanka"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "District:", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_c3f39c4a51b74d3e9f8d8bb735564c52", "style": "IPY_MODEL_3776365eea264ae8a07c37c299b22032"}}, "eb4a01c5e8ff4e45a905cc3be4b65111": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "464add206a084e79b4597e11a2355f17": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_7f6a78475ec44123819f54a4f44df27a", "IPY_MODEL_d184f4283ae64ac1a7ee0b6f0157f86b"], "layout": "IPY_MODEL_eb4a01c5e8ff4e45a905cc3be4b65111"}}, "a3b29f2d07f54da58e89f4383bcbd3d8": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6cc5fe2a574d4ff28890b6784e448beb": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "7f6a78475ec44123819f54a4f44df27a": {"model_name": "DropdownModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DropdownModel", "_options_labels": ["0", "1", "2", "3", "4"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "DropdownView", "description": "m", "description_tooltip": null, "disabled": false, "index": 1, "layout": "IPY_MODEL_a3b29f2d07f54da58e89f4383bcbd3d8", "style": "IPY_MODEL_6cc5fe2a574d4ff28890b6784e448beb"}}, "74045badd5624638b4c0f693454f4eb6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d184f4283ae64ac1a7ee0b6f0157f86b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_74045badd5624638b4c0f693454f4eb6", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "GenoTechies/GenosTechBooks",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Welcome to your Geno Book</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Kanchana Sankalpa Gunathilaka<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
