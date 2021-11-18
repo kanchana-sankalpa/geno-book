@@ -44,11 +44,33 @@ plt.plot(x, np.sin(x))
 plt.plot(x, np.cos(x))
     </pre> -->
      <pre data-executable>
-            print('hello world!')
+        !pip install pandas
+!pip install matplotlib
+!pip install seaborn
+!pip install ipywidgets
   </pre>
+    <pre data-executable>
+     from __future__ import print_function
+from ipywidgets import interact, interactive, fixed, interact_manual
+import ipywidgets as widgets
+import requests  # Import the requests library
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import seaborn as sns
+  </pre>
+   <pre data-executable>
+   url = ('https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&enddate=2021-09-31')
+#print(url)
+response = requests.get(url)  # Make a GET request to the URL
+# Print status code (and associated text)
+print(f"Data Request returned {response.status_code} : '{response.reason}'")
+# Print data returned (parsing as JSON)
+payload = response.json()  # Parse `response.text` into JSON
+   </pre>
  <script src="_static/juniper.min.js"></script>
  
- <script>new Juniper({ repo: 'kanchana-sankalpa/geno-book' })</script>
+ <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:'false' })</script>
   </body>
 </html>
 <!-- 
