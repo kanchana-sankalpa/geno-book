@@ -70,7 +70,7 @@ payload = response.json()  # Parse `response.text` into JSON
    </pre>
  <script src="_static/juniper.min.js"></script>
  
- <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:'false' })</script>
+ <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:false })</script>
   </body>
 </html>
 <!-- 
