@@ -40,6 +40,7 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/juniper.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -191,7 +192,7 @@
 <html>
   <head>
     <title>An active web page</title>
-    <script type="text/x-thebe-config">
+<!--     <script type="text/x-thebe-config">
       {
         bootstrap: true,
         selector: "pre",
@@ -211,11 +212,11 @@
     kernel.requestExecute({code: "import matplotlib.pyplot as plt"})
       });
     })
-</script>
+</script> -->
   </head>
   <body>
  part 1:
-    <pre>
+  <!--   <pre>
     %matplotlib inline
 import ipywidgets as widgets
 import requests  # Import the requests library
@@ -229,10 +230,16 @@ import seaborn as sns
 x = np.linspace(0,10)
 plt.plot(x, np.sin(x))
 plt.plot(x, np.cos(x))
-    </pre>
+    </pre> -->
+     <pre data-executable>
+            print('hello world!')
+  </pre>
+ <script src="_static/juniper.min.js"></script>
+ <script>new Juniper({ repo: 'kanchana-sankalpa/geno-book' })</script>
   </body>
 </html>
-<div class="toctree-wrapper compound">
+<!-- 
+https://github.com/executablebooks/thebe/blob/65800aa141f708476e953c080f12ebbadcf8dd2d/docs/_static/html_examples/demo-status-widget.html --><div class="toctree-wrapper compound">
 </div>
 </div>
 

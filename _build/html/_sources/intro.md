@@ -1,11 +1,10 @@
 # Welcome to your Geno Book
 
 This is a small step taken by Genotechies to allow knowleage generation based on data in Sri Lankan context
-
 <html>
   <head>
     <title>An active web page</title>
-    <script type="text/x-thebe-config">
+<!--     <script type="text/x-thebe-config">
       {
         bootstrap: true,
         selector: "pre",
@@ -25,11 +24,11 @@ This is a small step taken by Genotechies to allow knowleage generation based on
     kernel.requestExecute({code: "import matplotlib.pyplot as plt"})
       });
     })
-</script>
+</script> -->
   </head>
   <body>
  part 1:
-    <pre>
+  <!--   <pre>
     %matplotlib inline
 import ipywidgets as widgets
 import requests  # Import the requests library
@@ -43,7 +42,14 @@ import seaborn as sns
 x = np.linspace(0,10)
 plt.plot(x, np.sin(x))
 plt.plot(x, np.cos(x))
-    </pre>
+    </pre> -->
+     <pre data-executable>
+            print('hello world!')
+  </pre>
+ <script src="_static/juniper.min.js"></script>
+ 
+ <script>new Juniper({ repo: 'kanchana-sankalpa/geno-book' })</script>
   </body>
 </html>
-
+<!-- 
+https://github.com/executablebooks/thebe/blob/65800aa141f708476e953c080f12ebbadcf8dd2d/docs/_static/html_examples/demo-status-widget.html -->

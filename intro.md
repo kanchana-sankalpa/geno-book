@@ -46,7 +46,8 @@ plt.plot(x, np.cos(x))
      <pre data-executable>
             print('hello world!')
   </pre>
- <script src="juniper.min.js"></script>
+ <script src="_static/juniper.min.js"></script>
+ 
  <script>new Juniper({ repo: 'kanchana-sankalpa/geno-book' })</script>
   </body>
 </html>
