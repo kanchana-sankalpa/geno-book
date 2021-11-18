@@ -45,77 +45,76 @@ plt.plot(x, np.cos(x))
     </pre> -->
      <pre data-executable>
         !pip install pandas
-!pip install matplotlib
-!pip install seaborn
-!pip install ipywidgets
-from __future__ import print_function
-from ipywidgets import interact, interactive, fixed, interact_manual
-import ipywidgets as widgets
-import requests  # Import the requests library
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import seaborn as sns
+        !pip install matplotlib
+        !pip install seaborn
+        !pip install ipywidgets
+        from ipywidgets import interact, interactive, fixed, interact_manual
+        import ipywidgets as widgets
+        import requests  # Import the requests library
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import matplotlib as mpl
+        import seaborn as sns
   </pre>
    <pre data-executable>
-   url = ('https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&enddate=2021-09-31')
-#print(url)
-response = requests.get(url)  # Make a GET request to the URL
-# Print status code (and associated text)
-print(f"Data Request returned {response.status_code} : '{response.reason}'")
-# Print data returned (parsing as JSON)
-payload = response.json()  # Parse `response.text` into JSON
+    url = ('https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&enddate=2021-09-31')
+    #print(url)
+    response = requests.get(url)  # Make a GET request to the URL
+    # Print status code (and associated text)
+    print(f"Data Request returned {response.status_code} : '{response.reason}'")
+    # Print data returned (parsing as JSON)
+    payload = response.json()  # Parse `response.text` into JSON
    </pre>
     <pre data-executable>
     data=pd.json_normalize(payload['data'])
-selected=data[["datetext", "counttext","location.formattedAddress"]]
-print('Dataset feactched as selected dataframe')
-#print(selected)
-#list(selected.columns.values)
+    selected=data[["datetext", "counttext","location.formattedAddress"]]
+    print('Dataset feactched as selected dataframe')
+    #print(selected)
+    #list(selected.columns.values)
      </pre>
       <pre data-executable>
       filtedVals= selected[selected['location.formattedAddress'].str.contains('Nuwara Eliya, Sri Lanka')]
-print('By defult Nuwara Eliya District selected')
-print('For other district select it form the dropdown below >>>')
+      print('By defult Nuwara Eliya District selected')
+      print('For other district select it form the dropdown below >>>')
 
 
 
-def f(x):
-    print("District changed to %s" % x)
-    filtedVals=selected[selected['location.formattedAddress'].str.contains(x)]
-    print(filtedVals)
-    pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
-    return pivoted
+      def f(x):
+        print("District changed to %s" % x)
+        filtedVals=selected[selected['location.formattedAddress'].str.contains(x)]
+        print(filtedVals)
+        pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
+        return pivoted
 
-#interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
-
-
-
-#def foo(param):
-    #display(param)
-    #return param
-    #return pd.DataFrame({'Z':[param,param], 'A': ['b', 'b']})
-
-params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
-
-#bar = widgets.interactive_output(foo, {'param' : params})
+      #interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
 
 
-c = widgets.IntSlider()
 
-ui = widgets.HBox([params])
-def f2(params):
-    #print((params))
-    return params;
+      #def foo(param):
+        #display(param)
+        #return param
+        #return pd.DataFrame({'Z':[param,param], 'A': ['b', 'b']})
 
-out = widgets.interactive_output(f2, {'params': params})
+      params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
 
-display(ui, out)
+      #bar = widgets.interactive_output(foo, {'param' : params})
 
 
-#display(widgets.VBox([params, bar]))
+      c = widgets.IntSlider()
 
-#display(ui, out)
+      ui = widgets.HBox([params])
+      def f2(params):
+        #print((params))
+        return params;
+
+      out = widgets.interactive_output(f2, {'params': params})
+
+      display(ui, out)
+
+
+      #display(widgets.VBox([params, bar]))
+
+      #display(ui, out)
 
       </pre>
  <script src="_static/juniper.min.js"></script>
