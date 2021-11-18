@@ -48,9 +48,7 @@ plt.plot(x, np.cos(x))
 !pip install matplotlib
 !pip install seaborn
 !pip install ipywidgets
-  </pre>
-    <pre data-executable>
-     from __future__ import print_function
+from __future__ import print_function
 from ipywidgets import interact, interactive, fixed, interact_manual
 import ipywidgets as widgets
 import requests  # Import the requests library
