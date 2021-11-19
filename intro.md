@@ -1,76 +1,65 @@
 # Welcome to your Geno Book
-
 This is a small step taken by Genotechies to allow knowleage generation based on data in Sri Lankan context
 <html>
-  <head>
-    <title>An active web page</title>
-<!--     <script type="text/x-thebe-config">
-      {
-        bootstrap: true,
-        selector: "pre",
-        requestKernel: true,
-    binderOptions: {
-        repo: "binder-examples/requirements",
-        ref: "master",
-    },
-      }
-    </script>
-  <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
-     <script >$.getScript("https://unpkg.com/thebe@latest")
-    .done(function (script, textStatus) {
-           thebelab.events.on("request-kernel")((kernel) => {
-    // Find any cells with an initialization tag and ask Thebe to run them when ready
-    kernel.requestExecute({code: "import numpy as np"})
-    kernel.requestExecute({code: "import matplotlib.pyplot as plt"})
-      });
-    })
-</script> -->
-  </head>
-  <body>
+<head>
+<title>An active web page</title>
+</head>
+<body>
  part 1:
-  <!--   <pre>
-    %matplotlib inline
-import ipywidgets as widgets
-import requests  # Import the requests library
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import seaborn as sns
-    </pre>
-    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua:
-    <pre data-executable="true">
-x = np.linspace(0,10)
-plt.plot(x, np.sin(x))
-plt.plot(x, np.cos(x))
-    </pre> -->
-     <pre data-executable>
-        !pip install pandas
+<pre data-executable>
+!pip install pandas
 !pip install matplotlib
-!pip install seaborn
+#!pip install seaborn
 !pip install ipywidgets
-  </pre>
-    <pre data-executable>
-     from __future__ import print_function
+#from __future__ import print_function
 from ipywidgets import interact, interactive, fixed, interact_manual
 import ipywidgets as widgets
 import requests  # Import the requests library
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import seaborn as sns
-  </pre>
-   <pre data-executable>
-   url = ('https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&enddate=2021-09-31')
+#import seaborn as sns
+</pre>
+<pre data-executable>
+url = ('https://covid19-healthylk.herokuapp.com/api/districtstotal?startdate=2021-08-31&enddate=2021-09-31')
 #print(url)
 response = requests.get(url)  # Make a GET request to the URL
 # Print status code (and associated text)
 print(f"Data Request returned {response.status_code} : '{response.reason}'")
 # Print data returned (parsing as JSON)
 payload = response.json()  # Parse `response.text` into JSON
-   </pre>
+</pre>
+<pre data-executable>
+data=pd.json_normalize(payload['data'])
+selected=data[["datetext", "counttext","location.formattedAddress"]]
+print('Dataset feactched as selected dataframe')
+#print(selected)
+#list(selected.columns.values)
+filtedVals= selected[selected['location.formattedAddress'].str.contains('Nuwara Eliya, Sri Lanka')]
+print('By defult Nuwara Eliya District selected')
+print('For other district select it form the dropdown below >>>')
+def f(x):
+    print("District changed to %s" % x)
+    filtedVals=selected[selected['location.formattedAddress'].str.contains(x)]
+    print(filtedVals)
+    pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
+    return pivoted
+interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
+</pre>
+<pre data-executable>
+import numpy as np
+x = np.random.uniform(0, 5, size=100)
+ep = np.random.normal(size=100)
+y = 2*x + ep
+x_values = np.linspace(0, 5, 1000)
+def slope_viz(m=1):
+    plt.scatter(x, y)
+    plt.plot(x_values, m*x_values, lw=3, color='black')
+    plt.ylim(-1.2, 12.2);
+widgets.interact(slope_viz, m=[0, 1, 2, 3, 4]);
+</pre>
  <script src="_static/juniper.min.js"></script>
- 
- <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:'false' })</script>
+ <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:false })</script>
   </body>
 </html>
 <!-- 

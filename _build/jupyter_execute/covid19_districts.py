@@ -74,7 +74,7 @@ def f(x):
     pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
     return pivoted
 
-#interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
+interact(f, x=['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka']);
 
 
 
@@ -83,21 +83,21 @@ def f(x):
     #return param
     #return pd.DataFrame({'Z':[param,param], 'A': ['b', 'b']})
 
-params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
+#params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
 
 #bar = widgets.interactive_output(foo, {'param' : params})
 
 
-c = widgets.IntSlider()
+#c = widgets.IntSlider()
 
-ui = widgets.HBox([params])
+#ui = widgets.HBox([params])
 def f2(params):
     #print((params))
     return params;
 
-out = widgets.interactive_output(f2, {'params': params})
+#out = widgets.interactive_output(f2, {'params': params})
 
-display(ui, out)
+#display(ui, out)
 
 
 #display(widgets.VBox([params, bar]))
@@ -162,7 +162,13 @@ def slope_viz(m=1):
 widgets.interact(slope_viz, m=[0, 1, 2, 3, 4]);
 
 
-# In[103]:
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 
