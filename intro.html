@@ -259,51 +259,25 @@ plt.plot(x, np.cos(x))
     print('Dataset feactched as selected dataframe')
     #print(selected)
     #list(selected.columns.values)
-     </pre>
+    </pre>
       <pre data-executable>
       filtedVals= selected[selected['location.formattedAddress'].str.contains('Nuwara Eliya, Sri Lanka')]
       print('By defult Nuwara Eliya District selected')
       print('For other district select it form the dropdown below >>>')
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  def f(x):
-    print(&quot;District changed to %s&quot; % x)
-    filtedVals=selected[selected[&#39;location.formattedAddress&#39;].str.contains(x)]
-    print(filtedVals)
-    pivoted = pd.DataFrame(filtedVals.pivot_table(values=&#39;counttext&#39;, index=&#39;datetext&#39;, columns=&#39;location.formattedAddress&#39;, aggfunc=&#39;sum&#39;))
-    return pivoted
-
-  #interact(f, x=[&#39;Nuwara Eliya, Sri Lanka&#39;, &#39;Badulla, Sri Lanka&#39;, &#39;Kurunegala, Sri Lanka&#39;]);
-
-
-
-  #def foo(param):
-    #display(param)
-    #return param
-    #return pd.DataFrame({&#39;Z&#39;:[param,param], &#39;A&#39;: [&#39;b&#39;, &#39;b&#39;]})
-
-  params = widgets.Dropdown(options= [&#39;Nuwara Eliya, Sri Lanka&#39;, &#39;Badulla, Sri Lanka&#39;, &#39;Kurunegala, Sri Lanka&#39;])
-
-  #bar = widgets.interactive_output(foo, {&#39;param&#39; : params})
-
-
-  c = widgets.IntSlider()
-
-  ui = widgets.HBox([params])
-  def f2(params):
-    #print((params))
-    return params;
-
-  out = widgets.interactive_output(f2, {&#39;params&#39;: params})
-
-  display(ui, out)
-
-
-  #display(widgets.VBox([params, bar]))
-
-  #display(ui, out)
-
-  &lt;/pre&gt;
-</pre></div>
-</div>
+      def f(x):
+        print("District changed to %s" % x)
+        filtedVals=selected[selected['location.formattedAddress'].str.contains(x)]
+        print(filtedVals)
+        pivoted = pd.DataFrame(filtedVals.pivot_table(values='counttext', index='datetext', columns='location.formattedAddress', aggfunc='sum'))
+        return pivoted
+      params = widgets.Dropdown(options= ['Nuwara Eliya, Sri Lanka', 'Badulla, Sri Lanka', 'Kurunegala, Sri Lanka'])
+      c = widgets.IntSlider()
+      ui = widgets.HBox([params])
+      def f2(params):
+        return params;
+      out = widgets.interactive_output(f2, {'params': params})
+      display(ui, out)
+ </pre>
  <script src="_static/juniper.min.js"></script>
  <script>new Juniper({ repo: 'GenoTechies/spacy-io-binder',isolateCells:false })</script>
   </body>
